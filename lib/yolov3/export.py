@@ -139,7 +139,7 @@ def export_saved_model(model, im, file, dynamic,
         import tensorflow as tf
         from tensorflow import keras
 
-        from lib.yolov3.src.yolov3.models.tf import TFDetect, TFModel
+        from yolov3.models.tf import TFDetect, TFModel
 
         LOGGER.info(f'\n{prefix} starting export with tensorflow {tf.__version__}...')
         f = str(file).replace('.pt', '_saved_model')
@@ -187,7 +187,7 @@ def export_tflite(keras_model, im, file, int8, data, ncalib, prefix=colorstr('Te
     try:
         import tensorflow as tf
 
-        from lib.yolov3.src.yolov3.models.tf import representative_dataset_gen
+        from yolov3.models.tf import representative_dataset_gen
 
         LOGGER.info(f'\n{prefix} starting export with tensorflow {tf.__version__}...')
         batch_size, ch, *imgsz = list(im.shape)  # BCHW
